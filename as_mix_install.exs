@@ -50,8 +50,9 @@ defmodule MyApp.Router do
     plug(:fetch_session)
   end
 
-  scope "/", MyApp do
+  scope "/" do
     pipe_through([:browser])
+    live("/", SimpleWeb.ClockLive)
   end
 end
 
