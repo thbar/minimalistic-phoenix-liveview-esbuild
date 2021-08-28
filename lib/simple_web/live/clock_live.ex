@@ -1,10 +1,6 @@
 defmodule SimpleWeb.ClockLive do
   use Phoenix.LiveView
-
-  # Use all HTML functionality (forms, tags, etc)
   use Phoenix.HTML
-
-  # Import LiveView and .heex helpers (live_render, live_patch, <.form>, etc)
   import Phoenix.LiveView.Helpers
 
   def render(assigns) do
