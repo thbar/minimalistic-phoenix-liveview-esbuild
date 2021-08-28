@@ -11,7 +11,7 @@ config :simple, SimpleWeb.Endpoint,
 config :esbuild,
   version: "0.12.18",
   default: [
-    args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets),
+    args: ~w(app.js --bundle --target=es2016 --outdir=../priv/static/assets),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
