@@ -5,10 +5,6 @@ defmodule SimpleWeb do
         root: "lib/simple_web/templates",
         namespace: SimpleWeb
 
-      # Import convenience functions from controllers
-      import Phoenix.Controller,
-        only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
-
       # Include shared imports and aliases for views
       unquote(view_helpers())
     end
@@ -23,14 +19,6 @@ defmodule SimpleWeb do
     end
   end
 
-  def live_component do
-    quote do
-      use Phoenix.LiveComponent
-
-      unquote(view_helpers())
-    end
-  end
-
   def router do
     quote do
       use Phoenix.Router
@@ -38,12 +26,6 @@ defmodule SimpleWeb do
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
-    end
-  end
-
-  def channel do
-    quote do
-      use Phoenix.Channel
     end
   end
 
