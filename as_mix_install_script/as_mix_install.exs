@@ -8,7 +8,8 @@ Mix.install([
   {:phoenix, "~> 1.6.0-rc.0", override: true},
   :jason,
   :plug_cowboy,
-  {:phoenix_live_view, "~> 0.16.0"}
+  {:phoenix_live_view, "~> 0.16.0"},
+  {:esbuild, "~> 0.2"}
 ])
 
 Application.put_env(:my_app, MyApp.Endpoint,
