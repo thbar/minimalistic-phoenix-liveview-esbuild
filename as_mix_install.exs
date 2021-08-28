@@ -16,6 +16,7 @@ Application.put_env(:my_app, MyApp.Endpoint, server: true, http: [port: 8081])
 
 defmodule MyApp.Router do
   use Phoenix.Router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug(:accepts, ["html"])
