@@ -1,4 +1,6 @@
 # Initial skeleton copied from https://gist.github.com/teamon/a964dd80bc5c6802e3a8548efdda9cff
+Application.put_env(:phoenix, :json_library, Jason)
+
 
 Mix.install([
   {:phoenix, "~> 1.6.0-rc.0", override: true},
@@ -7,7 +9,6 @@ Mix.install([
   {:phoenix_live_view, "~> 0.16.0"}
 ])
 
-Application.put_env(:phoenix, :json_library, Jason)
 Application.put_env(:my_app, MyApp.Endpoint, server: true, http: [port: 8081])
 
 defmodule MyApp.Router do
