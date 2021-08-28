@@ -8,8 +8,6 @@ defmodule Simple.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Telemetry supervisor
-      SimpleWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: Simple.PubSub},
       # Start the Endpoint (http/https)
