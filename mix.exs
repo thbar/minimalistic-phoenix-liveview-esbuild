@@ -37,7 +37,6 @@ defmodule Simple.MixProject do
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.16.0"},
-      {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"}
