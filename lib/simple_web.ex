@@ -20,11 +20,6 @@ defmodule SimpleWeb do
 
   def router do
     quote do
-      use Phoenix.Router
-
-      import Plug.Conn
-      import Phoenix.Controller
-      import Phoenix.LiveView.Router
     end
   end
 

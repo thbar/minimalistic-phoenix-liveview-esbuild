@@ -1,5 +1,8 @@
 defmodule SimpleWeb.Router do
-  use SimpleWeb, :router
+  use Phoenix.Router
+
+  import Plug.Conn
+  import Phoenix.Controller
   import Phoenix.LiveView.Router
 
   pipeline :browser do
