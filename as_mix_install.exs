@@ -1,4 +1,7 @@
 # Initial skeleton copied from https://gist.github.com/teamon/a964dd80bc5c6802e3a8548efdda9cff
+# You can get a quick reloading with `find as_mix_install.exs | entr -cd elixir as_mix_install.exs`
+# without having CodeReloader enabled.
+
 Application.put_env(:phoenix, :json_library, Jason)
 
 
