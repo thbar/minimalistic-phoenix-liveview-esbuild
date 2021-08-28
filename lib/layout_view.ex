@@ -1,6 +1,6 @@
 defmodule SimpleWeb.LayoutView do
   use Phoenix.View,
-    root: "lib/simple_web/templates",
+    root: "lib/templates",
     namespace: SimpleWeb
 
   use Phoenix.HTML
