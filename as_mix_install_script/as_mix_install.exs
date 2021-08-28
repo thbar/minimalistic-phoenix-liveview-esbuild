@@ -3,6 +3,7 @@
 # without having CodeReloader enabled.
 
 Application.put_env(:phoenix, :json_library, Jason)
+Application.put_env(:esbuild, :version, "0.12.18")
 
 Mix.install([
   {:phoenix, "~> 1.6.0-rc.0", override: true},
@@ -11,6 +12,12 @@ Mix.install([
   {:phoenix_live_view, "~> 0.16.0"},
   {:esbuild, "~> 0.2"}
 ])
+
+Application.put_env(:esbuild, :default,
+  args: ~w(app.js --bundle --target=es2016 --outdir=priv/static/assets),
+  cd: Path.expand("assets", __DIR__),
+  env: %{"NODE_PATH" => Path.expand("deps", __DIR__)}
+)
 
 Application.put_env(:my_app, MyApp.Endpoint,
   server: true,
