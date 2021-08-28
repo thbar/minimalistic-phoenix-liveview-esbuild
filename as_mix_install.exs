@@ -4,7 +4,6 @@
 
 Application.put_env(:phoenix, :json_library, Jason)
 
-
 Mix.install([
   {:phoenix, "~> 1.6.0-rc.0", override: true},
   :jason,
