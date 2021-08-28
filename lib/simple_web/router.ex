@@ -20,9 +20,4 @@ defmodule SimpleWeb.Router do
 
     live "/", ClockLive
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", SimpleWeb do
-  #   pipe_through :api
-  # end
 end
