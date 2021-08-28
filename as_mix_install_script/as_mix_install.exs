@@ -109,7 +109,7 @@ defmodule MyApp.Endpoint do
   plug(MyApp.Router)
 end
 
-{:ok, pid} = MyApp.Endpoint.start_link()
+{:ok, _pid} = MyApp.Endpoint.start_link()
 
 # unless running from IEx, sleep indefinitely so we can serve requests
 unless IEx.started?() do
