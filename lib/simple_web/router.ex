@@ -1,5 +1,6 @@
 defmodule SimpleWeb.Router do
   use SimpleWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,7 +18,7 @@ defmodule SimpleWeb.Router do
   scope "/", SimpleWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", ClockLive
   end
 
   # Other scopes may use custom stacks.
