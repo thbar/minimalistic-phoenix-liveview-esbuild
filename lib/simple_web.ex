@@ -10,19 +10,6 @@ defmodule SimpleWeb do
     end
   end
 
-  def live_view do
-    quote do
-      use Phoenix.LiveView
-
-      unquote(view_helpers())
-    end
-  end
-
-  def router do
-    quote do
-    end
-  end
-
   defp view_helpers do
     quote do
       # Use all HTML functionality (forms, tags, etc)
