@@ -25,7 +25,6 @@ defmodule MyApp.Router do
 
   scope "/", MyApp do
     pipe_through([:browser])
-    get("/", PostsController, :new)
   end
 end
 
@@ -57,15 +56,6 @@ defmodule MyApp.Endpoint do
   plug(Plug.Head)
   plug(Plug.Session, @session_options)
   plug(MyApp.Router)
-end
-
-defmodule MyApp.PostsController do
-  use Phoenix.Controller, namespace: MyApp
-
-  def new(conn, _params) do
-    conn
-    |> json(%{hello: "world"})
-  end
 end
 
 {:ok, pid} = MyApp.Endpoint.start_link()
