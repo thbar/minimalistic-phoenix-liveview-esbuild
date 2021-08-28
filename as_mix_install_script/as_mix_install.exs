@@ -46,6 +46,15 @@ defmodule SimpleWeb.ClockLive do
   end
 end
 
+defmodule SimpleWeb.LayoutView do
+  use Phoenix.View,
+    root: "templates",
+    namespace: SimpleWeb
+
+  use Phoenix.HTML
+  alias MyApp.Router.Helpers, as: Routes
+end
+
 defmodule MyApp.Router do
   use Phoenix.Router
   import Phoenix.LiveView.Router
@@ -53,6 +62,7 @@ defmodule MyApp.Router do
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
+    plug(:put_root_layout, {SimpleWeb.LayoutView, :root})
   end
 
   scope "/" do
