@@ -58,7 +58,6 @@ defmodule SimpleWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import SimpleWeb.ErrorHelpers
       alias SimpleWeb.Router.Helpers, as: Routes
     end
   end
