@@ -12,7 +12,13 @@ Mix.install([
   {:phoenix_live_view, "~> 0.16.0"}
 ])
 
-Application.put_env(:my_app, MyApp.Endpoint, server: true, http: [port: 8081])
+Application.put_env(:my_app, MyApp.Endpoint,
+  server: true,
+  http: [port: 8081],
+  secret_key_base: "vuLgz/lXn+03HJIPTHbTMeZGd16UzvFxLgThphnLdafNmlZqCSGEZJe3Hp9cRhVs",
+  live_view: [signing_salt: "xF2dLhep"]
+)
+
 defmodule SimpleWeb.ClockLive do
   use Phoenix.LiveView
   use Phoenix.HTML
