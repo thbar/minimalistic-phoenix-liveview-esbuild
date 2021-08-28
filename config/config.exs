@@ -11,7 +11,6 @@ import Config
 config :simple, SimpleWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "vuLgz/lXn+03HJIPTHbTMeZGd16UzvFxLgThphnLdafNmlZqCSGEZJe3Hp9cRhVs",
-  render_errors: [view: SimpleWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Simple.PubSub,
   live_view: [signing_salt: "xF2dLhep"]
 
