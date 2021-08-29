@@ -145,7 +145,7 @@ defmodule MyApp.Endpoint do
 
   plug(Plug.Static,
     at: "/",
-    from: :simple,
+    from: "priv/static",
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
   )
