@@ -23,7 +23,9 @@ Application.put_env(:esbuild, :default,
 
 Application.put_env(:my_app, MyApp.Endpoint,
   server: true,
-  http: [port: 8081],
+  # Binding to loopback ipv4 address prevents access from other machines.
+  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
+  http: [ip: {127, 0, 0, 1}, port: 8081],
   secret_key_base: "vuLgz/lXn+03HJIPTHbTMeZGd16UzvFxLgThphnLdafNmlZqCSGEZJe3Hp9cRhVs",
   live_view: [signing_salt: "xF2dLhep"]
 )
