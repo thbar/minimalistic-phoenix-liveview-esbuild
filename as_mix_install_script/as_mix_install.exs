@@ -99,9 +99,9 @@ defmodule SimpleWeb.ClockLive do
           <line style="stroke: #aaa; stroke-width: 1px" x1="100" y1="28" x2="100" y2="35" transform="rotate(<%= 360 * h / 12.0 %> 100 100)"/>
           <% end %>
           <line style="stroke: #888; stroke-width: 3px" x1="100" y1="100" x2="100" y2="50"
-            transform="rotate(<%= 360 * @date.hour / 12.0 %> 100 100)"/>
+            transform="rotate(<%= 360 * (@date.hour + @date.minute / 60.0) / 12.0 %> 100 100)"/>
           <line style="stroke: #888; stroke-width: 3px" x1="100" y1="100" x2="100" y2="27"
-            transform="rotate(<%= 360 * @date.minute / 60.0 %> 100 100)"/>
+            transform="rotate(<%= 360 * (@date.minute + @date.second / 60.0) / 60.0 %> 100 100)"/>
           <line style="stroke: #E88; stroke-width: 1px" x1="100" y1="100" x2="100" y2="27"
             transform="rotate(<%= 360 * @date.second / 60.0 %> 100 100)"/>
         </g>
@@ -114,7 +114,7 @@ defmodule SimpleWeb.ClockLive do
   end
 
   def mount(_params, _session, socket) do
-    if connected?(socket), do: :timer.send_interval(1000, self(), :tick)
+    if connected?(socket), do: :timer.send_interval(100, self(), :tick)
 
     {:ok, put_date(socket)}
   end
