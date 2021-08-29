@@ -13,6 +13,8 @@ Mix.install([
   {:esbuild, "~> 0.2"}
 ])
 
+# NOTE: do not move this before "Mix.install" or the esbuild command will lack
+# default parameters, resulting into cryptic error: Invalid transform flag: "--watch"
 Application.put_env(:esbuild, :default,
   args: ~w(app.js --bundle --target=es2016 --outdir=priv/static/assets),
   cd: Path.expand("assets", __DIR__),
