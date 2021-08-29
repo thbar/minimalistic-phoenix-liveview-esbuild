@@ -87,7 +87,7 @@ defmodule SimpleWeb.ClockLive do
   def render(assigns) do
     ~L"""
     <div id="svg-container">
-      <svg id="clock" width="400" height="400">
+      <svg id="clock" width="400" height="450">
         <g transform="scale(2)">
           <circle style="fill: #9ab" cx="102" cy="102" r="83"/>
           <circle style="fill: #666" cx="100" cy="100" r="83"/>
@@ -105,6 +105,9 @@ defmodule SimpleWeb.ClockLive do
           <line style="stroke: #E88; stroke-width: 1px" x1="100" y1="100" x2="100" y2="27"
             transform="rotate(<%= 360 * @date.second / 60.0 %> 100 100)"/>
         </g>
+        <text x="50" y="395" font-family="cursive" font-size="15">
+           The "almost-one-file" Phoenix LiveView clock app
+        </text>
       </svg>
     </div>
     """
