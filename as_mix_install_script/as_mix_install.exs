@@ -27,7 +27,12 @@ Application.put_env(:my_app, MyApp.Endpoint,
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 8081],
   secret_key_base: "vuLgz/lXn+03HJIPTHbTMeZGd16UzvFxLgThphnLdafNmlZqCSGEZJe3Hp9cRhVs",
-  live_view: [signing_salt: "xF2dLhep"]
+  live_view: [signing_salt: "xF2dLhep"],
+  debug_errors: true,
+  watchers: [
+    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+  ]
 )
 
 defmodule SimpleWeb.ClockLive do
