@@ -147,7 +147,7 @@ defmodule MyApp.Endpoint do
     at: "/",
     from: "priv/static",
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets)
   )
 
   plug(Plug.Parsers,
