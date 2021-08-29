@@ -86,19 +86,19 @@ defmodule SimpleWeb.ClockLive do
 
   def render(assigns) do
     ~L"""
-    <div class="clock">
-      <svg width="200" height="200">
-        <circle style="fill: #666" cx="100" cy="100" r="80"/>
-        <circle style="fill: #fff" cx="100" cy="100" r="77"/>
-        <line style="stroke: #888; stroke-width: 3px"
-          x1="100" y1="100" x2="100" y2="40"
-          transform="rotate(<%= 360 * @date.hour / 12.0 %> 100 100)"/>
-        <line style="stroke: #888; stroke-width: 3px"
-          x1="100" y1="100" x2="100" y2="27"
-          transform="rotate(<%= 360 * @date.minute / 60.0 %> 100 100)"/>
-        <line style="stroke: #F77; stroke-width: 1px"
-          x1="100" y1="100" x2="100" y2="27"
-          transform="rotate(<%= 360 * @date.second / 60.0 %> 100 100)"/>
+    <div id="svg-container">
+      <svg id="clock" width="400" height="400">
+        <g transform="scale(2)">
+          <circle style="fill: #9ab" cx="102" cy="102" r="83"/>
+          <circle style="fill: #666" cx="100" cy="100" r="83"/>
+          <circle style="fill: #FFF" cx="100" cy="100" r="77"/>
+          <line style="stroke: #888; stroke-width: 3px" x1="100" y1="100" x2="100" y2="50"
+            transform="rotate(<%= 360 * @date.hour / 12.0 %> 100 100)"/>
+          <line style="stroke: #888; stroke-width: 3px" x1="100" y1="100" x2="100" y2="27"
+            transform="rotate(<%= 360 * @date.minute / 60.0 %> 100 100)"/>
+          <line style="stroke: #E88; stroke-width: 1px" x1="100" y1="100" x2="100" y2="27"
+            transform="rotate(<%= 360 * @date.second / 60.0 %> 100 100)"/>
+        </g>
       </svg>
     </div>
     """
